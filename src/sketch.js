@@ -1,5 +1,6 @@
 let bird
 let pipes = []
+let isGameOver = false
 
 function setup() {
   createCanvas(640, 480)
@@ -12,7 +13,11 @@ function draw() {
 
   // Loop through each pipe
   for (let i = pipes.length - 1; i >= 0; i--) {
-    pipes[i].update()
+    if (isGameOver) {
+      pipes[i].draw()
+    } else {
+      pipes[i].update()
+    }
 
     // Delete when offscreen
     if (pipes[i].isOffscreen()) {
@@ -21,11 +26,15 @@ function draw() {
   }
 
   // Create a new pipe
-  if (frameCount % 75 == 0) {
+  if (frameCount % 75 === 0 && !isGameOver) {
     pipes.push(new Pipe())
   }
 
-  bird.update()
+  if (isGameOver) {
+    bird.draw()
+  } else {
+    bird.update()
+  }
 }
 
 function keyPressed() {
