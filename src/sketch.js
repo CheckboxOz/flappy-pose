@@ -8,3 +8,9 @@ function draw() {
 
   bird.update()
 }
+
+function keyPressed() {
+  if (key === ' ') {
+    bird.flap()
+  }
+}

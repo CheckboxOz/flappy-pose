@@ -4,7 +4,7 @@ class Bird {
     this.y = height / 2
 
     this.gravity = 0.7
-    this.lift = -12
+    this.lift = -25
     this.velocity = 0
   }
 
@@ -23,6 +23,10 @@ class Bird {
 
     if (this.y < 0) {
       this.y = 0
+      this.velocity = 0
+    }
+    if (this.y > 480) {
+      this.y = 480
       this.velocity = 0
     }
 
