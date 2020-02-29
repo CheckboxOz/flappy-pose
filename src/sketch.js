@@ -8,7 +8,7 @@ function setup() {
 }
 
 function draw() {
-  background(0)
+  background('#70c5ce')
 
   // Loop through each pipe
   for (let i = pipes.length - 1; i >= 0; i--) {
