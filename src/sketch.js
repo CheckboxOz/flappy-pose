@@ -9,9 +9,12 @@ let gameOverCountdown = 0
 let $message = document.querySelector('#message')
 let posenet
 let video
+let song
+let isSongPlaying = false
 
 function preload() {
-  birdImg = loadImage('img/grumpy-bird.png')
+  birdImg = loadImage('assets/grumpy-bird.png')
+  song = loadSound('assets/2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3')
 }
 
 function setup() {
@@ -52,8 +55,10 @@ function draw() {
   // Handle gameover restart
   if (isGameOver && !isCountingDown) {
     isCountingDown = true
+    stopSong()
 
     setTimeout(() => {
+      playSong()
       $message.innerHTML = ''
       pipes = []
       bird.y = height / 2
@@ -63,4 +68,16 @@ function draw() {
       $score.innerHTML = '0'
     }, 1000)
   }
+}
+
+function playSong() {
+  if (!isSongPlaying) {
+    isSongPlaying = true
+    song.play()
+  }
+}
+
+function stopSong() {
+  isSongPlaying = false
+  song.stop()
 }

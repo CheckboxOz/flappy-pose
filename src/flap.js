@@ -4,6 +4,8 @@
 function keyPressed() {
   if (key === ' ') {
     bird.flap()
+
+    playSong()
   }
 }
 
@@ -13,6 +15,11 @@ function keyPressed() {
 let hasFlappedUp = false
 document.querySelector('#start-button').addEventListener('click', () => {
   $message.innerHTML = 'Loading PoseNet'
+
+  if (!isSongPlaying) {
+    isSongPlaying = true
+    song.play()
+  }
 
   video = createCapture(VIDEO)
   video.hide()

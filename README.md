@@ -11,3 +11,4 @@ Flappy Bird, but where you flap your arms! This project uses the following libra
 
 - [CodingTrain's Flappy Bird tutorial](https://thecodingtrain.com/CodingChallenges/031-flappybird.html)
 - [Flappy Bird sprite](https://opengameart.org/content/free-game-asset-grumpy-flappy-bird-sprite-sheets)
+- [8-bit music (8 Bit Menu (By David Renda))](https://www.fesliyanstudios.com/royalty-free-music/downloads-c/8-bit-music/6)
