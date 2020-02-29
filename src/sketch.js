@@ -53,13 +53,6 @@ function draw() {
   if (isGameOver && !isCountingDown) {
     isCountingDown = true
 
-    // Don't @ me
-    // $message.innerHTML = 'Restarting in 3...'
-    // setTimeout(() => {
-    //   $message.innerHTML = 'Restarting in 2...'
-    // setTimeout(() => {
-    // $message.innerHTML = 'Restarting in 1...'
-
     setTimeout(() => {
       $message.innerHTML = ''
       pipes = []
@@ -69,7 +62,5 @@ function draw() {
       score = 0
       $score.innerHTML = '0'
     }, 1000)
-    //   }, 1000)
-    // }, 1000)
   }
 }
