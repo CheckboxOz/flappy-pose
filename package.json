@@ -1,0 +1,19 @@
+{
+  "name": "flappy-arms",
+  "version": "1.0.0",
+  "description": "Flappy Bird but where you have to flap your arms",
+  "main": "flappy-arms.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CheckboxOz/flappy-arms.git"
+  },
+  "author": "Oz Ramos <checkboxoz@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CheckboxOz/flappy-arms/issues"
+  },
+  "homepage": "https://github.com/CheckboxOz/flappy-arms#readme"
+}
