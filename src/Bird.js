@@ -4,8 +4,9 @@ class Bird {
     this.y = height / 2
     this.width = 32
 
-    this.gravity = 0.75
-    this.lift = -18
+    this.gravity = 0.5
+    this.lift = -16
+    this.liftFromGround = -12
     this.velocity = 0
   }
 
@@ -16,7 +17,11 @@ class Bird {
   }
 
   flap() {
-    this.velocity += this.lift
+    if (this.velocity === 0) {
+      this.velocity = this.liftFromGround
+    } else {
+      this.velocity += this.lift
+    }
   }
 
   update() {
@@ -30,7 +35,6 @@ class Bird {
     if (this.y > height) {
       this.y = height
       this.velocity = 0
-      isGameOver = true
     }
 
     this.draw()

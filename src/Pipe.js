@@ -8,6 +8,7 @@ class Pipe {
     this.x = width
     this.width = 80
     this.speed = 6
+    this.hasScored = false
   }
 
   update() {
@@ -19,7 +20,17 @@ class Pipe {
       }
     }
 
+    this.checkIfHasScored()
+
     this.draw()
+  }
+
+  checkIfHasScored() {
+    if (bird.x > this.x + this.width / 2 && !this.hasScored) {
+      score++
+      this.hasScored = true
+      $score.innerHTML = score
+    }
   }
 
   isOffscreen() {

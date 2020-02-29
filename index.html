@@ -5,11 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flappy Arms</title>
     <meta name="description" content="Flappy bird but where you have to flap your arms!" />
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div id="sketch-container"></div>
+    <h1>Score: <span id="score">0</span></h1>
+    <div id="message"></div>
+    <div id="button-wrap">
+      <button id="start-button">Start Webcam</button> (or press space to flap without the webcam)
+    </div>
 
     <script src="src/Bird.js"></script>
     <script src="src/Pipe.js"></script>
     <script src="src/sketch.js"></script>
+    <script src="src/flap.js"></script>
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
-  </head>
-  <body></body>
+  </body>
 </html>
