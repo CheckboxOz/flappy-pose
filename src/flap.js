@@ -16,10 +16,7 @@ let hasFlappedUp = false
 document.querySelector('#start-button').addEventListener('click', () => {
   $message.innerHTML = 'Loading PoseNet'
 
-  if (!isSongPlaying) {
-    isSongPlaying = true
-    song.play()
-  }
+  playSong()
 
   video = createCapture(VIDEO)
   video.hide()
