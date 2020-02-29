@@ -1,35 +1,45 @@
-class Bird {
+class Pipe {
   constructor() {
-    this.x = 64
-    this.y = height / 2
+    this.spacing = 200
+    this.top = random(height / 6, (3 / 4) * height)
+    this.bottom = height - (this.top + this.spacing)
+    this.x = width
+    this.width = 80
+    this.speed = 6
 
-    this.gravity = 0.7
-    this.lift = -25
-    this.velocity = 0
+    this.highlight = false
   }
 
   draw() {
-    fill(255)
-    ellipse(this.x, this.y, 32, 32)
-  }
+    if (this.highlight) {
+      fill(255, 0, 0)
+      console.log('hit')
+    } else {
+      fill(255)
+    }
 
-  flap() {
-    this.velocity += this.lift
+    rect(this.x, 0, this.width, this.top)
+    rect(this.x, height - this.bottom, this.width, this.bottom)
   }
 
   update() {
-    this.velocity += this.gravity
-    this.y += this.velocity
+    this.x -= this.speed
 
-    if (this.y < 0) {
-      this.y = 0
-      this.velocity = 0
-    }
-    if (this.y > 480) {
-      this.y = 480
-      this.velocity = 0
+    this.highlight = false
+    if (bird.y < this.top || bird.y > height - this.bottom) {
+      if (bird.x > this.x && bird.x < this.x + this.width) {
+        this.highlight = true
+      }
     }
 
     this.draw()
+  }
+
+  isOffscreen() {
+    if (this.x < -this.width) {
+      return true
+    } else {
+      return false
+    }
   }
 }
