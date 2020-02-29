@@ -1,6 +1,11 @@
 let bird
 let pipes = []
 let isGameOver = false
+let birdImg
+
+function preload() {
+  birdImg = loadImage('img/grumpy-bird.png')
+}
 
 function setup() {
   createCanvas(640, 480)

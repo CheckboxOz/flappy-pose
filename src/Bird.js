@@ -10,8 +10,9 @@ class Bird {
   }
 
   draw() {
-    fill(255)
-    ellipse(this.x, this.y, this.width, this.width)
+    // fill(255)
+    // ellipse(this.x, this.y, this.width, this.width)
+    image(birdImg, this.x - 30, this.y - 30)
   }
 
   flap() {
@@ -29,6 +30,7 @@ class Bird {
     if (this.y > height) {
       this.y = height
       this.velocity = 0
+      isGameOver = true
     }
 
     this.draw()
